@@ -1,0 +1,21 @@
+---
+title:  Present
+subtitle: "Status update."
+image: "img/timeout_la.jpg"
+---
+
+My name is Jennie.
+
+I just turned thirty-four. I live in Los Angeles, on the west side, you know, the bit that's basically Santa Monica but not quite, so I can't take my dog to any of the Santa Monica dog parks but my rent is supposedly cheaper in return. (It isn't. But I just moved from San Francisco, so anything here is cheap in my book.)
+
+I'm a software engineer and I work at Riot Games, but not on games directly, on the stuff behind the scenes that means people can actually play online. It's fun, challenging, interesting, all that jazz. I write a lot of Go, which I'm really enjoying. I'm a [top lane main](http://na.op.gg/summoner/userName=Jellybear).
+
+I play a lot of games. It's kinda cool to work with people who don't think that's a bad thing. Nuff said there.
+
+If it's early in the morning you might find me at my Crossfit gym, on my neverending quest to not be unhealthy. Pretty hard when there are unlimited gummy bears in the office kitchen. 
+
+Maybe I should figure out how many burpees I need to do to burn off a gummy bear. 
+
+I bet it's too many. One burpee is too many.
+
+I hate burpees.

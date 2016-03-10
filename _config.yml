@@ -1,0 +1,7 @@
+# Site settings
+title: Jennie Lees
+description: Software engineer
+keywords: software engineer
+author: jennielees
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site

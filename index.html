@@ -1,260 +1,87 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Jennie Lees - Projects</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/chart.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.leanModal.min.js"></script>
-
-    <script>
-            $(function() {
-                $('a[rel*=leanModal]').leanModal({ top : 200, closeButton: ".modal_close" });
-            });
-    </script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}"/>
+    <meta name="keywords" content="{{ site.keywords }}"/>
+    <meta name="author" content="{{ site.author }}"/>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="css/modern-blog.css"/>
+    <!--[if IE]>
+    <script type="text/javascript" src="js/vendors/html5.min.js"></script>
     <![endif]-->
-
-    <!-- Blacktie.co provided inspiration for the base version of this layout -->
-  </head>
-
-  <body>
-
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse">
-            <div class="col-lg-4">
-                <a class="navbar-brand" href="http://jennielees.github.io">
-                        <img src="assets/img/jen_100.png" alt="">
-                </a>
-                <h3>Jennie Lees</h3>
-                <p>Multi-hatted codecrafter.</p>
+    <script>
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+            var root = document.getElementsByTagName('html')[0];
+            root.setAttribute('class', 'ff');
+        }
+    </script>
+</head>
+<body class="body">
+<div class="container">
+    <header class="header">
+        <h1>Jennie Lees<span>Software Engineer</span></h1>
+        <nav class="links">
+            <a href="http://github.com/jennielees"><i class="fa fa-github-square fa-3x"></i></a>
+            <a href="http://twitter.com/jennielees"><i class="fa fa-twitter-square fa-3x"></i></a>
+            <a href="http://facebook.com/jennielees"><i class="fa fa-facebook-square fa-3x"></i></a>
+            <a href="http://linkedin.com/in/jennielees"><i class="fa fa-linkedin-square fa-3x"></i></a>
+        </nav>
+    </header>
+    <div class="content">
+        <!-- trianglify pattern container -->
+        <div class="pattern pattern--hidden"></div>
+        <!-- cards -->
+        <div class="wrapper">
+            {% for post in site.posts %}
+            <div class="card" data-id="{{ post.title }}">
+                <div class="card__container card__container--closed">
+                    <svg class="card__image" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1200"
+                         preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <clipPath id="{{ post.title }}-clip-path">
+                                <polygon class="clip" points="0,1200 0,0 1920,0 1920,1200"></polygon>
+                            </clipPath>
+                        </defs>
+                        <image clip-path="url(#{{ post.title }}-clip-path)" width="1920" height="1200"
+                               xlink:href="{{ post.image }}"></image>
+                    </svg>
+                    <div class="card__content">
+                        <i class="card__btn-close fa fa-times"></i>
+                        <div class="card__caption">
+                            <h2 class="card__title">{{ post.title }}</h2>
+                            <p class="card__subtitle">{{ post.subtitle }}</p>
+                        </div>
+                        <div class="card__copy">
+                            <!--<div class="meta">
+                                <span class="meta__date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                            </div>-->
+                            {{ post.content }}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-8">
-                <ul class="nav navbar-nav navbar-left">
-                  <li class="active"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li class="active"><a href="#"><i class="fa fa-github"></i></a></li>
-                  <li class="active"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  <li class="active"><a href="#"><i class="fa fa-envelope-o"></i></a></li>
-                </ul>
-            </div>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-	<div class="container">
-		<div class="row centered mt grid">
-			<h3>Project Sampling</h3>
-			<div class="mt"></div>
-			<div class="col-lg-3">
-				<a href="#project1" rel="leanModal" name="project1"><img src="assets/img/careless_talk.png" alt="">
-                <span class="d-hover">
-                    Secret
-                    <p>Data mining project collecting and parsing information about startups and investors.</p>
-                    <p class="skills">Python, Flask, Mongo</p>
-                </span>
-                </a>
-			</div>
-			<div class="col-lg-3">
-				<a href="#project2" rel="leanModal" name="project2"><img src="assets/img/lol_api.png" alt="">
-                <span class="d-hover">
-                    League of Legends API
-                    <p>Python library and distributed data mining system design. Caching and processing game data.</p>
-                    <p class="skills">Python, REST, Hadoop</p>
-                </span>
-                </a>
-			</div>
-			<div class="col-lg-3">
-				<a href="#project3" rel="leanModal"><img src="assets/img/ambi.png" alt="">
-                <span class="d-hover">
-                    Smart Lamp
-                    <p>Raspberry Pi internet-connected lamp which reacts to events from web input streams.</p>
-                    <p class="skills">RasPi, Node.js, Redis, Python, LEDs</p>
-                </span>
-                </a>
-			</div>
-            <div class="col-lg-3">
-                <a href="#project4" rel="leanModal"><img src="assets/img/paperdoll.png" alt="">
-                <span class="d-hover">
-                    Paper Doll
-                    <p>24 hour hackathon entry at TCDisrupt 2013. Android mashup of ShopStyle and
-                    RadiumOne SDKs to create fashion montages.</p>
-                    <p class="skills">Android</p>
-                </span>
-                </a>
-            </div>
-
-		</div>
-        <div class="row centered mt grid">
-            <div class="mt"></div>
-            <div class="col-lg-3">
-                <a href="#project4" rel="leanModal" name="project4"><img src="assets/img/play_games.png" alt="">
-                <span class="d-hover">
-                    Google Play Games
-                    <p>Launched Android, iOS and web developer SDK and contributed to consumer app UX and launch.</p>
-                    <p class="skills">Product Management, UX, Android</p>
-                </span>
-                </a>
-            </div>
-            <div class="col-lg-3">
-                <a href="#project5" rel="leanModal" name="project5"><img src="assets/img/glass.png" alt="">
-                <span class="d-hover">
-                    Google Glass apps
-                    <p>Several Google Glass projects including lighthearted seasonal transmogrifiers. (I own a Glass.)</p>
-                    <p class="skills">Android, Image Processing</p>
-                </span>
-                </a>
-            </div>
-            <div class="col-lg-3">
-                <a href="#project6" rel="leanModal"><img src="assets/img/festbuzz.png" alt="">
-                <span class="d-hover">
-                    FestBuzz
-                    <p>Data processing and web frontend to extract aggregate opinions from Twitter. Custom AI engine.</p>
-                    <p class="skills">Python, Django, NLP</p>
-                </span>
-                </a>
-            </div>
-            <div class="col-lg-3">
-                <a href="#project7" rel="leanModal"><img src="assets/img/dungeon.png" alt="">
-                <span class="d-hover">
-                    Dungeon Creeper
-                    <p>Work-in-progress 3D dungeon crawling game.</p>
-                    <p class="skills">Unity3D, C#, Boo</p>
-                </span>
-                </a>
-            </div>
-
-        </div>
-
-          <div class="row centered mt grid last-grid">
-            <div class="mt"></div>
-            <div class="col-lg-3">
-                <a href="#project9" rel="leanModal" name="project4"><img src="assets/img/dragon_whisp.png" alt="">
-                <span class="d-hover">
-                    Dragon Whisperers
-                    <p>SF Indie Game Jam 2013. Cross-platform co-operative puzzle game. Wrote all game code.</p>
-                    <p class="skills">Corona SDK, Lua, iOS, Android</p>
-                </span>
-                </a>
-            </div>
-            <div class="col-lg-3">
-                <a href="#project10" rel="leanModal" name="project5"><img src="assets/img/pitch_hero.png" alt="">
-                <span class="d-hover">
-                    Pitch Hero
-                    <p>Hackathon project. Real-time audience feedback during presentations.</p>
-                    <p class="skills">Node.js, HTML/CSS/JS</p>
-                </span>
-                </a>
-            </div>
-            <div class="col-lg-3">
-                <a href="#project11" rel="leanModal"><img src="assets/img/fyeo.png" alt="">
-                <span class="d-hover">
-                    Secret
-                    <p>Super-secret Android project handling app design, Google+ cross-platform sign-on and
-                    client-server communication.</p>
-                    <p class="skills">Android UX, Node.js, CoffeeScript</p>
-                </span>
-                </a>
-            </div>
-            <div class="col-lg-3">
-                <a href="#project12" rel="leanModal"><img src="assets/img/buddha.png" alt="">
-                <span class="d-hover">
-                    Grammar Buddha
-                    <p>Native iOS game to help children correctly place punctuation in sentences.</p>
-                    <p class="skills">iOS</p>
-                </span>
-                </a>
-            </div>
-
-        </div>
-	</div>
-
-    <div class="container">
-        <div class="col-lg-12 centered about">
-            <h3>About</h3>
-            <p>I am a generalist with a background spanning product management, UX and code.</p>
-            <p>I have a background in machine learning, text processing and analytics.</p>
-            <p>My strengths lie in the <strong>rapid prototyping</strong> and <strong>early-stage product development</strong> process.</p>
-            <ul>
-            <li class="header">As of Jan 2014, I'm focusing on:</li>
-            <li><strong>Android</strong> development (including Google Glass)</li>
-            <li><strong>Python</strong>, especially data science projects</li>
-            <li>Server- and client-side <strong>JavaScript</strong> (Angular, Node)</li>
-            </ul>
+            {% endfor %}
+            <!-- /cards -->
         </div>
     </div>
-
-	<div id="f">
-		<div class="container">
-			<div class="row">
-				<p>Much <i class="fa fa-heart"></i> &mdash; <a href="mailto:jennielees at gmail.com">Jennie</a></p>
-			</div>
-		</div>
-	</div>
-
-    <!-- Modal divs -->
-
-    <div id="project1" class="popup">
-    <a class="modal_close" href="#"></a>
-        <h2>Lorem ipsum</h2>
-        Dolor sit amet.
-
-        <div class="project-skills">
-        <i class="fa fa-android"></i>
-        </div>
-    </div>
-
-    <div id="project1" class="popup">
-    <a class="modal_close" href="#"></a>
-        <h2>Lorem ipsum</h2>
-        Dolor sit amet.
-
-        <div class="project-skills">
-        <i class="fa fa-android"></i>
-        </div>
-    </div>
-
-    <div id="project1" class="popup">
-    <a class="modal_close" href="#"></a>
-        <h2>Lorem ipsum</h2>
-        Dolor sit amet.
-
-        <div class="project-skills">
-        <i class="fa fa-android"></i>
-        </div>
-    </div>
-
-
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.js"></script>
-  </body>
+    <!-- /container -->
+</div>
+<!-- JS -->
+<script src="js/vendors/trianglify.min.js"></script>
+<script src="js/vendors/TweenMax.min.js"></script>
+<script src="js/vendors/ScrollToPlugin.min.js"></script>
+<script src="js/vendors/cash.min.js"></script>
+<script src="js/card-modern-blog.js"></script>
+<script src="js/modern-blog.js"></script>
+</body>
 </html>
